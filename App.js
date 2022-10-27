@@ -7,11 +7,24 @@ export default function App() {
   const [valor2,setValor2] = useState(0);
   let resultado = 0;
 
-
   const somar = ()=>{
-      resultado = parseFloat(valor1) - parseFloat(valor2);
+      resultado = parseFloat(valor1) + parseFloat(valor2);
       alert('O resultado é: ' + resultado);
-          
+  };
+
+  const subtrair = ()=>{
+    resultado = parseFloat(valor1) - parseFloat(valor2);
+    alert('O resultado é: ' + resultado);
+  };
+
+  const multiplicar =()=>{
+    resultado = parseFloat(valor1) * parseFloat(valor2);
+    alert('O resultado é: ' + resultado);
+  };
+
+  const dividir = ()=>{
+    resultado = parseFloat(valor1) / parseFloat(valor2);
+    alert('O resultado é: ' + resultado);
   };
 
   return (
@@ -30,12 +43,35 @@ export default function App() {
       value = {valor2}
       onChangeText = {valor2 =>setValor2(valor2)}
       keyboardType = 'numeric'
+
     >
     </TextInput>
+
 
     <Button
       title = 'Somar'
       onPress = {somar}
+      color = '#841584'
+    >
+    </Button>
+
+    <Button
+      title = 'Subtrair'
+      onPress = {subtrair}
+      color = '#841584'
+    >
+    </Button>
+
+    <Button
+      title = 'Dividir'
+      onPress = {dividir}
+      color = '#841584'
+    >
+    </Button>
+
+    <Button
+      title = 'Multiplicar'
+      onPress = {multiplicar}
       color = '#841584'
     >
     </Button>
@@ -50,5 +86,5 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-    },
+    }
 });
